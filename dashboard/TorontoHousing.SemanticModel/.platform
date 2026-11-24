@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "TorontoHousing"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "68dad160-8f97-4fd3-a850-62d45ad5c033"
+  }
+}

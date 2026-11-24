@@ -1,0 +1,4 @@
+source,check_name,ref_date,detail,action
+rent_2br,data ends early,2026-01,latest annual value is for 2025,carried forward to 2026-10; marked as estimated
+income_real_2024,data ends early,2025-01,latest annual value is for 2024,carried forward to 2026-10; marked as estimated
+cpi,partial year,2026,CPI available to 2026-10 only,2026 income uses the average CPI to date

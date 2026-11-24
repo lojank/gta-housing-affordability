@@ -1,0 +1,86 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "affordIndex",
+  "position": {
+    "x": 20,
+    "y": 140,
+    "z": 0,
+    "height": 560,
+    "width": 820,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "affordability"
+                    }
+                  },
+                  "Property": "month_start"
+                }
+              },
+              "queryRef": "affordability.month_start",
+              "nativeQueryRef": "month_start",
+              "active": true,
+              "displayName": "Month"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "affordability"
+                        }
+                      },
+                      "Property": "affordability_index"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Avg(affordability.affordability_index)",
+              "nativeQueryRef": "Average of affordability_index",
+              "displayName": "Affordability index"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Affordability index (Dec 2016 = 100, higher = harder to afford)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

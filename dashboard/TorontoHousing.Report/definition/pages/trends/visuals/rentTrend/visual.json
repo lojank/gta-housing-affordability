@@ -1,0 +1,86 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "rentTrend",
+  "position": {
+    "x": 860,
+    "y": 80,
+    "z": 3000,
+    "height": 300,
+    "width": 400,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "affordability"
+                    }
+                  },
+                  "Property": "month_start"
+                }
+              },
+              "queryRef": "affordability.month_start",
+              "nativeQueryRef": "month_start",
+              "active": true,
+              "displayName": "Month"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "affordability"
+                        }
+                      },
+                      "Property": "rent_2br"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Avg(affordability.rent_2br)",
+              "nativeQueryRef": "Average of rent_2br",
+              "displayName": "2-bedroom rent"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Average 2-bedroom rent ($/month)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "paymentTrend",
+  "position": {
+    "x": 860,
+    "y": 430,
+    "z": 3000,
+    "height": 270,
+    "width": 400,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "affordability"
+                    }
+                  },
+                  "Property": "month_start"
+                }
+              },
+              "queryRef": "affordability.month_start",
+              "nativeQueryRef": "month_start",
+              "active": true,
+              "displayName": "Month"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "affordability"
+                        }
+                      },
+                      "Property": "payment_per_100k"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Avg(affordability.payment_per_100k)",
+              "nativeQueryRef": "Average of payment_per_100k",
+              "displayName": "Payment per $100k"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Monthly payment per $100k borrowed'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

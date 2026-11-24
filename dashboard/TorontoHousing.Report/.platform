@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "TorontoHousing"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "74f91e0a-0233-4bd2-91e6-258489996415"
+  }
+}
